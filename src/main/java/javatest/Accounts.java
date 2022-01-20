@@ -64,14 +64,6 @@ public class Accounts {
 		
 		ArrayList<Pin> accounts = new ArrayList<Pin>();
 		Pin[] account = new Pin[10];
-		while(true) {
-			System.out.println("select your choice");
-			System.out.println("Enter 1 to create a new account");
-			System.out.println("Enter 2 to create access old account");
-			System.out.println("Enter 3 to create");
-			System.out.println("Enter 4 to create");
-			
-		}
 	}
 
 }

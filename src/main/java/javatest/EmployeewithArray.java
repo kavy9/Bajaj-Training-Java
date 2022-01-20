@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 //import javatest.QuickSort;
-class Class_Employee{
+class Class_Employee implements Comparable<Class_Employee>{
 
 	protected String name;
 	protected int emp_id;
@@ -46,10 +46,19 @@ class Class_Employee{
 		return "[ name=" + name + ", emp_id=" + emp_id + ", salary=" + salary + ", department="
 				+ department + " ]";
 	}
+	public int compareTo(Class_Employee o) {
+		if(this.emp_id>o.emp_id) {
+			return 1;
+		}
+		else if(this.emp_id<o.emp_id) {
+			return -1;
+		}	
+		return 0;
+	}
 
 }
 
-public class EmployeeList {
+public class EmployeewithArray {
 	public static Class_Employee create_emp(String name, int emp_id, int salary, String department) {
 		Class_Employee emp = new Class_Employee(name,emp_id,salary,department);
 		return emp;
