@@ -1,8 +1,9 @@
 package javatest;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+//import javatest.QuickSort;
 class Class_Employee{
 
 	protected String name;
@@ -78,6 +79,19 @@ public class EmployeeList {
 		}
 		return -1;	
 	}
+	public static void print_sorted(Class_Employee [] emp,int count ) {
+		int arr[] = new int[count];
+		System.out.println("yes");
+		for(int i=0;i<count;i++) {
+			System.out.println(i);
+			arr[i]=emp[i].emp_id;
+		}
+		QuickSort.quicksort(arr, 0, count-1);
+		for(int i=0;i<arr.length;i++) {
+			System.out.println(emp[get_index_by_id(emp,arr[i],count)].toString());
+		}
+		
+	}
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Class_Employee [] edata = new Class_Employee[10];
@@ -89,6 +103,7 @@ public class EmployeeList {
 			System.out.println("Enter 3 to Update an Employee detail");
 			System.out.println("Enter 4 to delete an Employee");	
 			System.out.println("Enter 5 to Search by name");
+			System.out.println("Enter 6 to print sorted list");
 			int choice = sc.nextInt();
 			if(choice == 1) {
 				System.out.println("enter name: ");
@@ -183,6 +198,9 @@ public class EmployeeList {
 				}
 				
 				
+			}
+			else if(choice==6) {
+				print_sorted(edata,count);
 			}
 			else {
 				break;
