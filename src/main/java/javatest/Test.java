@@ -1,34 +1,60 @@
 package javatest;
 
+import java.io.IOException;
+import java.text.ParseException;
+import java.lang.IndexOutOfBoundsException;
 import javax.management.JMRuntimeException;
+import java.lang.ArrayIndexOutOfBoundsException;
 
-class Age extends JMRuntimeException{
-	Age(String msg){
-		super(msg);
-		System.out.println();
+//class Base{
+//public void display() throws IOException {
+//System.out.println("Base" ); }
+//}
+//class Derived extends Base {
+//public void display() throws IOException, ParseException {
+//System.out.println("Derived" ); }
+//}
+//class Test {
+//public static void main(String args[]) throws IOException, ParseException{
+//Derived b=new Derived();
+//b.display(); }
+//}
+
+class Aaa{
+	static int n;
+	public void Aa() throws IndexOutOfBoundsException {
+		System.out.println("In A ");
+	}
+	void Adiff() {
+		System.out.println("In A diff ");
 	}
 }
+class Bb extends Aaa{
+	public void Aa() throws IndexOutOfBoundsException,ArrayIndexOutOfBoundsException{
+		System.out.println(" in B");
+	}
+	void Bdiff() {
+		System.out.println("In B diff ");
+	}
+}
+
 public class Test {
-
-	public static boolean valid(int age) throws Age {
-		if(age<18) {
-			throw new Age("not old enough");
-		}
-		else {return false;}
-	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int a=17;
+	public static void main(String args[]) {
+		String[] str=new String[10];
+		System.out.println(str[1]);
+		Bb var = new Bb() {};
+		Bb var2 = new Bb() {};
+		int abc;
+		Aaa.n=123;
 		try {
-			valid(17);
-		}catch(Age e) {
-			System.out.println("You're Not old enough");
-			//e.printStackTrace();
-		}finally {
-			
+			var.Aa();
+			System.out.println(var.getClass());
+			System.out.println(var2.getClass());
+			System.out.println(Aaa.n);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		String b = "something";
-		b.substring(0,35);
+		var.Adiff();
 	}
-
 }
