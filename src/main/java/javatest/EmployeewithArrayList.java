@@ -82,6 +82,8 @@ public static void main(String [] args) {
 		System.out.println("Enter 5 to Search by name or id ");
 		System.out.println("Enter 6 to print sorted list in ASEC");
 		System.out.println("Enter 7 to print sorted list in DESC");
+		System.out.println("Enter 8 to print sorted by Salary");
+		System.out.println("Enter 9 to print sorted by Salary in  Reverse");
 		int choice = sc.nextInt();
 		if(choice==1) {
 			
@@ -187,6 +189,18 @@ public static void main(String [] args) {
 		}
 		else if(choice==7) {
 			Collections.sort(emp,Collections.reverseOrder());
+			for(Class_Employee itr: emp) {
+				System.out.println(itr.toString());
+			}
+		}
+		else if(choice==8) {
+			Collections.sort(emp,new sortBySalary());
+			for(Class_Employee itr: emp) {
+				System.out.println(itr.toString());
+			}
+		}
+		else if(choice==9) {
+			Collections.sort(emp,new sortBySalaryReverse());
 			for(Class_Employee itr: emp) {
 				System.out.println(itr.toString());
 			}

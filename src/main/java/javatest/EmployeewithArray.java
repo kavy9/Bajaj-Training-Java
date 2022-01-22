@@ -2,6 +2,7 @@ package javatest;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 //import javatest.QuickSort;
 class Class_Employee implements Comparable<Class_Employee>{
@@ -56,8 +57,43 @@ class Class_Employee implements Comparable<Class_Employee>{
 		return 0;
 	}
 
+
 }
 
+class sortBySalary implements Comparator<Class_Employee>{
+
+	public int compare(Class_Employee o1, Class_Employee o2) {
+		// TODO Auto-generated method stub
+		if(o1.getSalary()>o2.getSalary()) {
+			return 1;
+		}
+		else if(o1.getSalary()<o2.getSalary())
+		{
+			return -1;
+		}
+		return 0;
+	}
+}
+class sortBySalaryReverse implements Comparator<Class_Employee>{
+
+	public int compare(Class_Employee o1, Class_Employee o2) {
+		if(o1.getSalary()<o2.getSalary()) {
+			return 1;
+		}
+		else if(o1.getSalary()>o2.getSalary())
+		{
+			return -1;
+		}
+		return 0;
+	}
+}
+class sortByName implements Comparator<Class_Employee>{
+
+	public int compare(Class_Employee o1, Class_Employee o2) {
+		
+		return o1.getName().compareTo(o2.getName());
+	}
+}
 public class EmployeewithArray {
 	public static Class_Employee create_emp(String name, int emp_id, int salary, String department) {
 		Class_Employee emp = new Class_Employee(name,emp_id,salary,department);
