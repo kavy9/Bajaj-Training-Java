@@ -1,22 +1,32 @@
 package javatest;
 
 class A{
-	public int a;
+	public int a=-2;
 	public A() {
 		
 	}
 	public A(int a){
 		this.a = a;
 	}
+	{
+		System.out.println("instance a");
+	}
+	public int Amethod() {
+		return 0;
+	}
 }
 class B extends A{
-	public int b;
+	public int b =super.a;
+	//public int a=10;
 	public B() {
 		
 	}
 	public B(int a,int b){
-		super(a);
+		//super(a);
 		this.b=b;
+	}
+	public int Amethod() {
+		return 1;
 	}
 	
 }
@@ -32,13 +42,17 @@ public class C extends B{
 	public C(int a,int b,int c){
 		super(a,b);
 		this.c = c;
-		super.a=123;
+		//super.a=123;
+		
+	}
+	public C() {
 		
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		C cobj = new C(1,2,3);
 		D dobj = new D(4,5,6);
+		cobj.C();
 		System.out.println(cobj.a);
 		System.out.println(cobj.b);
 		System.out.println(cobj.c);
@@ -47,5 +61,12 @@ public class C extends B{
 		System.out.println(dobj.b);
 		System.out.println(dobj.d);
 		System.out.println();
+		cobj.Amethod();
+		C cobj2 = new C();
+		System.out.println(cobj2);
+	}
+	private void C() {
+		System.out.println("constructor method ");
+		
 	}
 }

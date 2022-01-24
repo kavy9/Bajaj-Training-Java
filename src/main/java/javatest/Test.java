@@ -2,9 +2,12 @@ package javatest;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.lang.IndexOutOfBoundsException;
 import javax.management.JMRuntimeException;
 import java.lang.ArrayIndexOutOfBoundsException;
+import java.util.*;
 
 //class Base{
 //public void display() throws IOException {
@@ -59,29 +62,21 @@ import java.lang.ArrayIndexOutOfBoundsException;
 //	}
 //}
 
-public class Test{
-	public static void change(int [] a) {
-		a[0]=78;
+class Aa {
+	 int a=0;
+	 Bb b = new Bb();
+	 public String toString(){
+	  return "a=" + a + ", b.a=" + b.a;
+	 }
 	}
-	public static void change(String a) {
-		a="123";
-	}
-	public static void change(Class_Employee e) {
-		e.setEmp_id(0);
-	}
-	public static void main(String [] args) {
-		int[] asd = {1,2};
-		int [] dsa= asd;
-		String abc = "657";
-		Class_Employee e = new Class_Employee("name",12,345,"dept");
-		change(asd);
-		change(abc);
-		change(e);
-		System.out.println(asd[0]);
-		System.out.println(dsa[0]);
-		System.out.println(abc);
-		System.out.println(e.getEmp_id());
-		
 
+	class Bb {
+	 int a=1;
 	}
-}
+
+	class Test {
+	 public static void main(String[]args){
+	  Aa a1=new Aa();
+	  System.out.println(a1);
+	 }
+	}

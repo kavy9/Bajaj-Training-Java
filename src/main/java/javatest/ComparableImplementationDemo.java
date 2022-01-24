@@ -1,8 +1,10 @@
 package javatest;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 
 public class ComparableImplementationDemo {
 
