@@ -1,4 +1,5 @@
 # Java-Hands-On
 
-This is a eclipse maven project File. 
-A Small Java Project Files and Tutorial demo java files On using Java Classes and Driver
+Practice java files Working with Comparable and Comparator interfaces, Stream API and more.
+
+navigate to  /src/main/java/com/bajaj/java
